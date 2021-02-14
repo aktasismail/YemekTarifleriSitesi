@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ismailak1_Model2" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Tablo_Kategoriler">
+    <Key>
+      <PropertyRef Name="kategoriid" />
+    </Key>
+    <Property Name="kategoriid" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kategoriad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="kategoriadet" Type="Byte" />
+    <NavigationProperty Name="Tablo_Yemek" Relationship="Self.FK_Tablo_Yemek_Tablo_Kategoriler" FromRole="Tablo_Kategoriler" ToRole="Tablo_Yemek" />
+  </EntityType>
+  <EntityType Name="Tablo_Yemek">
+    <Key>
+      <PropertyRef Name="yemekid" />
+    </Key>
+    <Property Name="yemekid" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="yemekad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="yemekmalzeme" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="malzeme2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="malzeme3" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="malzeme4" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="malzeme5" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="malzeme6" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="yemektarifi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="kategoriid" Type="Int16" Nullable="false" />
+    <Property Name="yemekresim" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="yemeksure" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Tablo_Kategoriler" Relationship="Self.FK_Tablo_Yemek_Tablo_Kategoriler" FromRole="Tablo_Yemek" ToRole="Tablo_Kategoriler" />
+  </EntityType>
+  <Association Name="FK_Tablo_Yemek_Tablo_Kategoriler">
+    <End Role="Tablo_Kategoriler" Type="Self.Tablo_Kategoriler" Multiplicity="1" />
+    <End Role="Tablo_Yemek" Type="Self.Tablo_Yemek" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tablo_Kategoriler">
+        <PropertyRef Name="kategoriid" />
+      </Principal>
+      <Dependent Role="Tablo_Yemek">
+        <PropertyRef Name="kategoriid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ismailak1_Entities4" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Tablo_Kategoriler" EntityType="Self.Tablo_Kategoriler" />
+    <EntitySet Name="Tablo_Yemek" EntityType="Self.Tablo_Yemek" />
+    <AssociationSet Name="FK_Tablo_Yemek_Tablo_Kategoriler" Association="Self.FK_Tablo_Yemek_Tablo_Kategoriler">
+      <End Role="Tablo_Kategoriler" EntitySet="Tablo_Kategoriler" />
+      <End Role="Tablo_Yemek" EntitySet="Tablo_Yemek" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

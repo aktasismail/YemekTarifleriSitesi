@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ismailak1_Model2StoreContainer" CdmEntityContainer="ismailak1_Entities4">
+    <EntitySetMapping Name="Tablo_Kategoriler">
+      <EntityTypeMapping TypeName="ismailak1_Model2.Tablo_Kategoriler">
+        <MappingFragment StoreEntitySet="Tablo_Kategoriler">
+          <ScalarProperty Name="kategoriid" ColumnName="kategoriid" />
+          <ScalarProperty Name="kategoriad" ColumnName="kategoriad" />
+          <ScalarProperty Name="kategoriadet" ColumnName="kategoriadet" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tablo_Yemek">
+      <EntityTypeMapping TypeName="ismailak1_Model2.Tablo_Yemek">
+        <MappingFragment StoreEntitySet="Tablo_Yemek">
+          <ScalarProperty Name="yemekid" ColumnName="yemekid" />
+          <ScalarProperty Name="yemekad" ColumnName="yemekad" />
+          <ScalarProperty Name="yemekmalzeme" ColumnName="yemekmalzeme" />
+          <ScalarProperty Name="malzeme2" ColumnName="malzeme2" />
+          <ScalarProperty Name="malzeme3" ColumnName="malzeme3" />
+          <ScalarProperty Name="malzeme4" ColumnName="malzeme4" />
+          <ScalarProperty Name="malzeme5" ColumnName="malzeme5" />
+          <ScalarProperty Name="malzeme6" ColumnName="malzeme6" />
+          <ScalarProperty Name="yemektarifi" ColumnName="yemektarifi" />
+          <ScalarProperty Name="kategoriid" ColumnName="kategoriid" />
+          <ScalarProperty Name="yemekresim" ColumnName="yemekresim" />
+          <ScalarProperty Name="yemeksure" ColumnName="yemeksure" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
