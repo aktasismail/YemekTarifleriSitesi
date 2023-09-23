@@ -1,0 +1,19 @@
+﻿@model List<YemekTarifleriMVC.Models.Tarifler>
+@{
+    ViewBag.Title = "Listele";
+}
+
+<h2>Tarifler</h2>
+
+<div class="row mt-3">
+    
+    @foreach (var ymklr in Model)
+    {
+        <div class="col-sm-4" style="text-align:center;">
+            <img src="@ymklr.Gorsel" class="w-75 p-3" alt="Responsive image" />
+            <h3> @ymklr.Baslik</h3>
+            <h6>Süre: @ymklr.Sure</h6>
+            <a href="/Home/Detay/@ymklr.Id" style="background-color:#0066cc !important;" class="btn btn-success">Oku</a>
+        </div>
+    }
+</div>

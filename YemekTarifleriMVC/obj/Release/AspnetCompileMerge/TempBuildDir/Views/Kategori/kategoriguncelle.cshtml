@@ -1,0 +1,18 @@
+﻿@model YemekTarifleriMVC.Models.Kategoriler
+@{
+    ViewBag.Title = "kategoriguncelle";
+}
+
+@using (Html.BeginForm("guncelle", "Kategori", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Id)
+        @Html.TextBoxFor(m => m.Id, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.Ad)
+        @Html.TextBoxFor(m => m.Ad, new { @class = "form-control" })
+    </div>
+    <div>
+        <button class="btn-primary">Değiştir </button>
+    </div>
+}

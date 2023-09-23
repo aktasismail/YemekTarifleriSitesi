@@ -1,0 +1,6 @@
+﻿@model List<YemekTarifleriMVC.Models.Kategoriler>
+
+@foreach (var item in Model)
+{
+    <a class="dropdown-item" href="/Home/Listele/@item.Id">@item.Ad</a>
+}

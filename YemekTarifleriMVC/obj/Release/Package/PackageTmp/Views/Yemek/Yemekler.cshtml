@@ -1,0 +1,25 @@
+﻿@model List<YemekTarifleriMVC.Models.Tarifler>
+@{
+    ViewBag.Title = "Index";
+}
+
+<table class="table table-bordered">
+    <tr style="background-color:deepskyblue !important;" class="bg-primary">
+        <th>Başlık</th>
+        <th>Detay</th>
+    </tr>
+    @foreach (var tarif in Model)
+    {
+        <tr class="table-primary">
+            <td>@tarif.Baslik</td>
+            <td>@tarif.Detaylar</td>
+            <td>
+                <a href="/Yemek/Sil/@tarif.Id" style="background-color:#3399cc !important;" class="btn btn-danger">Sil</a>
+            </td>
+            <td>
+                <a href="/Yemek/Guncelle/@tarif.Id" style="background-color:#0066cc !important;" class="btn btn-success">Değiştir</a>
+            </td>
+        </tr>
+    }
+</table>
+<a href="/Yemek/YeniTarif/" class="btn btn-primary">Güncelle</a>

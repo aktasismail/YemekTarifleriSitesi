@@ -1,0 +1,20 @@
+﻿@model YemekTarifleriMVC.Models.Kategoriler
+@{
+    ViewBag.Title = "yenikategori";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <h4>Kategori Ekle</h4>
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div>
+        <label style="font-size:20px;">Kategori Adı</label>
+
+        @Html.TextBoxFor(model => model.Ad, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Ad, "", new { @style = "color:blue" })
+    </div>
+    <div>
+        <button type="submit" style="margin-top:20px;" class="btn btn-success">Kategori Ekle</button>
+    </div>
+}

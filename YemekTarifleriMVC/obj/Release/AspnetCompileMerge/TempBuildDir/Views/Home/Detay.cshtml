@@ -1,0 +1,28 @@
+﻿@model YemekTarifleriMVC.Models.Tarifler
+@{
+    ViewBag.Title = "Detay";
+}
+@using (Html.BeginForm("Detay", "Yemek", FormMethod.Get))
+{
+    <div style=" background-color:#99CED3" height="25px;"> &nbsp</div>
+    <div style="background-color:#5F6366; margin-bottom:50px;">
+        <div style="height:40px; margin-top:-35px; background-color:#EDB5BF"></div>
+        <div class="col-md-12" style="color:aliceblue; background-color:#86B3D1"><h1>@Html.DisplayFor(m => m.Baslik)</h1></div>
+        <div class="container" style="color: #CDEBFC;font-family: MV Boli; margin-bottom:50px; padding-bottom:100px">
+            <h2>Malzemeler</h2>
+            <br /><p>
+                <pre style="white-space: pre-wrap;">
+                    @Html.DisplayFor(m => m.Malzemeler)<br />
+                </pre>
+            </p>
+            <img src="@Html.DisplayFor(m => m.Gorsel)" class="w-75 p-3" height="500px" alt="">
+            <div class="container">
+                <div style="font-size:xx-small !important; background-color: rgba(0, 0, 0, 0.00);">
+                    <div class="margin-top:50px;"><h2>Yapılışı</h2></div><br />
+                    <h6>@Html.DisplayFor(m => m.Detaylar)</h6>
+                </div>
+            </div>
+        </div>
+
+    </div>
+}

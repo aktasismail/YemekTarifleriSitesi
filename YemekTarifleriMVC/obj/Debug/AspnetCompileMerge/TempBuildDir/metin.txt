@@ -1,0 +1,1 @@
+﻿<add name="TarifConnection" connectionString="server=DESKTOP-9HHGM9U\SQLEXPRESS;initial catalog=YemekTarifleri;integrated security=True;MultipleActiveResultSets=True; App=EntityFramework" providerName="System.Data.SqlClient" />

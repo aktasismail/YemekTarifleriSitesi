@@ -1,0 +1,26 @@
+﻿
+@model List<YemekTarifleriMVC.Models.Kategoriler>
+@{
+    ViewBag.Title = "Index";
+}
+
+<table class="table table-bordered">
+    <tr style="background-color:deepskyblue !important;" class="bg-primary">
+        <th>Kategori İd</th>
+        <th>Kategori Ad</th>
+    </tr>
+        @foreach (var katgri in Model)
+        { 
+            <tr class="table-primary">
+                <td>@katgri.Id</td>
+                <td>@katgri.Ad</td>
+                <td>
+                    <a href="/Kategori/sil/@katgri.Id" style="background-color:#3399cc !important;" class="btn btn-danger">Sil</a>
+                </td>
+                <td>
+                    <a href="/Kategori/guncelle/@katgri.Id" style="background-color:#0066cc !important;" class="btn btn-success">Değiştir</a>
+                </td>
+            </tr>
+        }
+</table>
+<a href="/Kategori/yenikategori/" class="btn btn-primary">Yeni Kategori Ekle</a>
